@@ -1,6 +1,13 @@
 pipeline {
-stage "pull code"
-            checkout([$class: 'GitSCM',
-                        branches: [[name: "master"]], 
-                        userRemoteConfigs: [[url: "https://github.com:mfs-challenge/captureorderack.git", credentialsId: '3f3274fa-9202-4f37-914f-91e9ae1bee06' ]]])
- }
+            stages {
+                        stage "pull code"
+                        {
+                        steps
+                                    {
+                                    checkout([$class: 'GitSCM',
+                                    branches: [[name: "master"]], 
+                                    userRemoteConfigs: [[url: "https://github.com:mfs-challenge/captureorderack.git", credentialsId: '3f3274fa-9202-4f37-914f-91e9ae1bee06' ]]])
+                                    }
+                        }
+            }
+}
