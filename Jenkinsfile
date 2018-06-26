@@ -1,6 +1,6 @@
 pipeline {
             stages {
-                        stage "pull code"
+                        stage ('pull code')
                         {
                         steps
                                     {
